@@ -1,0 +1,297 @@
+*** Settings ***
+Library           SeleniumLibrary
+Library           SikuliLibrary
+
+*** Variables ***
+${action}         //*[@id="nb-option-7"]
+${login}          //html/body/ngx-app/ngx-auth/nb-layout/div/div/div/div/div/nb-layout-column/ngx-login/div/div[2]/div/div/div/form/input
+${Action thumbs}    //*[@id="cdk-overlay-0"]/nb-windows-container/nb-window/nb-card/nb-card-body/nb-overlay-container/ngx-notification-popup/div/div/ngx-action/div/div[2]/nb-card/nb-card-body/form/div[1]/div[1]/div/div[1]/div/i
+${live}           //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/nb-sidebar/div/div/nb-menu/ul/li[1]/a
+${Add}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-dashboard/div[2]/nucor-tab/div/ul/img
+${Shipping bay}    //*[@id="nb-option-7"]
+${LMF}            //*[@id="nb-option-8"]
+${Anomaly name}    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-dashboard/div[2]/nucor-tab/div/ul/li[1]
+${Camera}         //*[@id="nb-option-17"]
+${Add1}           //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-dashboard/div[2]/nucor-tab/div/ul/img
+${Lsave}          //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[2]/div[2]/div/nb-dialog-container/ngx-add-tab-details/form/nb-card/nb-card-footer/div/button[2]
+${delete}         //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-dashboard/div[2]/nucor-tab/div/ul/li[6]/span/a[2]
+${Yes}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[2]/div[3]/div/nb-dialog-container/nb-card/nb-card-footer/div/button[1]
+${Asset Monitoring}    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/nb-sidebar/div/div/nb-menu/ul/li[2]/a
+${Reports}        //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/nb-sidebar/div/div/nb-menu/ul/li[2]/ul/li[2]/a
+${three}          //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[2]/div[2]/div/nb-datepicker-container/nb-overlay-container/nb-calendar-range/nb-base-calendar/nb-card/nb-card-body/nb-calendar-day-picker/div/nb-calendar-picker/nb-calendar-picker-row[1]/nb-calendar-range-day-cell[4]
+${SE}             //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[2]/div[2]/div/nb-datepicker-container/nb-overlay-container/nb-calendar-range/nb-base-calendar/nb-card/nb-card-body/nb-calendar-day-picker/div/nb-calendar-picker/nb-calendar-picker-row[2]/nb-calendar-range-day-cell[1]
+${Generate}       //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-ladlehose-reports/nb-card/nb-card-header/div/div/div[3]/button
+${Left}           //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[2]/div[2]/div/nb-datepicker-container/nb-overlay-container/nb-calendar-range/nb-base-calendar/nb-card/nb-card-header/nb-calendar-pageable-navigation
+${History}        //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div/div/div/nb-sidebar/div/div/nb-menu/ul/li[3]/a
+${HReport}        //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/nb-sidebar/div/div/nb-menu/ul/li[3]/ul/li[1]/a
+${HONE}           //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[2]/div/div/nb-datepicker-container/nb-overlay-container/nb-calendar-range/nb-base-calendar/nb-card/nb-card-body/nb-calendar-day-picker/div/nb-calendar-picker/nb-calendar-picker-row[1]/nb-calendar-range-day-cell[4]
+${SEVEN}          //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[2]/div/div/nb-datepicker-container/nb-overlay-container/nb-calendar-range/nb-base-calendar/nb-card/nb-card-body/nb-calendar-day-picker/div/nb-calendar-picker/nb-calendar-picker-row[2]/nb-calendar-range-day-cell[3]
+${HGenerate}      //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-anamolies-report/nb-card/nb-card-header/div/div/div[3]/button
+${Search by ID}    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/nb-sidebar/div/div/nb-menu/ul/li[3]/ul/li[2]/a
+${SSubmit}        //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-searchanomalyid/nb-card/nb-card-header/div/div/div[2]/form/input[2]
+${Saved Items}    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/nb-sidebar/div/div/nb-menu/ul/li[3]/ul/li[3]/a
+${45 DZ}          //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-savedfile/div/div/div/div[2]/div/div[1]/p-tree/div/div[2]/ul/p-treenode/li/ul/p-treenode[1]/li/div/span[2]
+${SID}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-savedfile/div/div/div/div[2]/div/div[2]/div/ngx-listview/div/p-table/div/div/table/tbody/tr[1]/td[1]
+${Scancel}        //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[2]/div[2]/div/nb-windows-container/nb-window/nb-card/nb-card-header/div[2]/button[3]
+${insights}       //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/nb-sidebar/div/div/nb-menu/ul/li[4]/a
+${Distribution}    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/nb-sidebar/div/div/nb-menu/ul/li[4]/ul/li[1]/a
+${LQ}             //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[4]
+${QTD}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[5]
+${YTD}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[6]
+${Custom}         //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[7]
+${D1}             //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/p-calendar/span/div/div/div/div[2]/table/tbody/tr[1]/td[4]/span
+${D6}             //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/p-calendar/span/div/div/div/div[2]/table/tbody/tr[2]/td[2]/span
+${Reason}         //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/p-sidebar/div/div/div[2]/ul/li[2]
+${RLQ}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[4]
+${RQTD}           //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[5]
+${R1M}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[3]
+${R1W}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[2]
+${Rtoday}         //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[1]
+${Rcustom}        //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[7]
+${RN}             //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/p-calendar/span/div/div/div/div[2]/table/tbody/tr[2]/td[5]/span
+${ROT}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/p-calendar/span/div/div/div/div[2]/table/tbody/tr[3]/td[2]/span
+${Severity}       //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/p-sidebar/div/div/div[2]/ul/li[3]
+${SYTD}           //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[6]
+${SQTD}           //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[5]
+${SLQ}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[4]
+${S1M}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[3]
+${S1W}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[2]
+${Stoday}         //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[1]
+${Location}       //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/p-sidebar/div/div/div[2]/ul/li[4]
+${LLQ}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[4]
+${DCamera}        //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/p-sidebar/div/div/div[2]/ul/li[5]
+${CLQ}            //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[4]
+${Category}       //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/p-sidebar/div/div/div[2]/ul/li[6]
+${CategoryLQ}     //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-insights/div/div[2]/div/span/button[4]
+
+*** Test Cases ***
+TC1
+    login page
+    insight module details
+
+*** Keywords ***
+login page
+    Open Browser    https://nue-shark.iiq.ai/auth/login    ff
+    Maximize Browser Window
+    sleep    3s
+    SeleniumLibrary.Input Text    //html/body/ngx-app/ngx-auth/nb-layout/div/div/div/div/div/nb-layout-column/ngx-login/div/div[2]/div/div/div/form/div[1]/ngx-email-field/div/nb-form-field/div/input    admin@iiq.com
+    sleep    3s
+    SeleniumLibrary.Input Text    //html/body/ngx-app/ngx-auth/nb-layout/div/div/div/div/div/nb-layout-column/ngx-login/div/div[2]/div/div/div/form/div[2]/ngx-password-field/div/nb-form-field/div[1]/input    Nucor$#@1
+    sleep    3s
+    Click Element    //html/body/ngx-app/ngx-auth/nb-layout/div/div/div/div/div/nb-layout-column/ngx-login/div/div[2]/div/div/div/form/div[3]/nb-checkbox/label/span[1]
+    sleep    3s
+    Click Element    ${login}
+    sleep    5s
+
+dashboard page
+    sleep    8s
+    Click Element    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-dashboard/div[3]/div[2]/nucor-dashboard-tile/nb-card/nb-card-header/img
+    sleep    3s
+    execute javascript    window.scrollTo(0,1000);
+    sleep    5s
+    Click Element    ${Action thumbs}
+    sleep    3s
+    execute javascript    window.scrollTo(0,1000);
+    sleep    2s
+    Click Element    //*[@id="input-resovledReason"]/button
+    sleep    4s
+    Click Element    ${action}
+    sleep    3s
+    execute javascript    window.scrollTo(0,500)
+    sleep    3s
+    SeleniumLibrary.Input Text    //*[@id="input-comments"]    This woring or not now i checking
+    sleep    3s
+    Click Element    //*[@id="cdk-overlay-0"]/nb-windows-container/nb-window/nb-card/nb-card-body/nb-overlay-container/ngx-notification-popup/div/div/ngx-action/div/div[2]/nb-card/nb-card-body/form/div[3]/div[2]/ngx-riskfactor/div/div[1]/div[4]
+    sleep    3s
+    Click Element    //*[@id="cdk-overlay-0"]/nb-windows-container/nb-window/nb-card/nb-card-body/nb-overlay-container/ngx-notification-popup/div/div/ngx-action/div/div[2]/nb-card/nb-card-body/form/button
+    sleep    3s
+    Click Element    //*[@id="cdk-overlay-0"]/nb-windows-container/nb-window/nb-card/nb-card-header/div[2]/button[3]
+
+Live page
+    sleep    3s
+    Go To    https://nue-shark.iiq.ai/pages/dashboard
+    sleep    3s
+    Click Element    ${Add}
+    sleep    3s
+    SeleniumLibrary.Input Text    //*[@id="input-empid"]    Tab 2
+    sleep    3s
+    Click Element    //*[@id="input-unitName"]/button
+    sleep    3s
+    Click Element    ${Shipping bay}
+    sleep    3s
+    Click Element    ${LMF}
+    sleep    3s
+    Click Element    //*[@id="input-empid"]
+    sleep    3s
+    Click Element    //*[@id="cdk-overlay-0"]/nb-dialog-container/ngx-add-tab-details/form/nb-card/nb-card-footer/div/button[2]
+
+check planet view
+    sleep    6s
+    Click Element    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-dashboard/div[2]/nucor-tab/div/ul/li[2]
+    sleep    3s
+    Click Element    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-dashboard/div[1]/div/nb-select/button
+    sleep    3s
+    Click Element    //*[@id="nb-option-0"]
+    sleep    3s
+    execute javascript    window.scrollTo(0,500)
+    sleep    3s
+    execute javascript    window.scrollTo(0,700)
+    sleep    3s
+    Click Element    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-dashboard/div[1]/div/nb-select/button
+    sleep    3s
+    Click Element    //*[@id="nb-option-3"]
+    sleep    3s
+    Click Element    ${Add1}
+    sleep    3s
+    SeleniumLibrary.Input Text    //*[@id="input-empid"]    Tab5
+    sleep    3s
+    Click Element    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[2]/div[2]/div/nb-dialog-container/ngx-add-tab-details/form/nb-card/nb-card-body/div[2]/nb-select/button
+    sleep    3s
+    Click Element    ${Shipping bay}
+    sleep    3s
+    Click Element    ${LMF}
+    sleep    3s
+    Click Element    //*[@id="input-empid"]
+    sleep    3s
+    Click Element    ${Lsave}
+
+check the delete options
+    sleep    6s
+    Click Element    ${Add1}
+    sleep    3s
+    SeleniumLibrary.Input Text    //*[@id="input-empid"]    Tab4
+    sleep    3s
+    Click Element    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[2]/div[2]/div/nb-dialog-container/ngx-add-tab-details/form/nb-card/nb-card-body/div[2]/nb-select/button
+    sleep    3s
+    Click Element    ${Shipping bay}
+    sleep    3s
+    Click Element    ${LMF}
+    sleep    3s
+    Click Element    //*[@id="input-empid"]
+    sleep    3s
+    Click Element    ${Lsave}
+    sleep    5s
+    Click Element    ${delete}
+    sleep    3s
+    Click Element    ${Yes}
+
+Asset monitoring module
+    sleep    6s
+    Click Element    ${Asset Monitoring}
+    sleep    3s
+    Click Element    ${Reports}
+    sleep    3s
+    Click Element    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-ladlehose-reports/nb-card/nb-card-header/div/div/div[2]/input
+    sleep    4s
+    Click Element    ${three}
+    sleep    3s
+    Click Element    ${SE}
+    sleep    3s
+    Click Element    ${Generate}
+
+History report module
+    sleep    3s
+    Click Element    ${History}
+    sleep    3s
+    Click Element    ${HReport}
+    sleep    3s
+    Click Element    //html/body/ngx-app/ngx-pages/ngx-one-column-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-anamolies-report/nb-card/nb-card-header/div/div/div[2]/input
+    sleep    3s
+    Click Element    ${HONE}
+    sleep    3s
+    Click Element    ${SEVEN}
+    sleep    3s
+    Click Element    ${HGenerate}
+    sleep    4s
+    Click Element    ${Search by ID}
+    sleep    3s
+    SeleniumLibrary.Input Text    //*[@id="input-username"]    1182
+    sleep    3s
+    Click Element    ${SSubmit}
+    sleep    3s
+    execute javascript    window.scrollTo(0,500);
+    sleep    3s
+
+Saved items module details
+    sleep    3s
+    Click Element    ${History}
+    sleep    3s
+    Click Element    ${Saved Items}
+    sleep    4s
+    Click Element    ${45 DZ}
+    sleep    3s
+    execute javascript    window.scrollTo(0,1000);
+    sleep    3s
+    Click Element    ${SID}
+    sleep    3s
+    execute javascript    window.scrollTo(0,1000);
+    sleep    5s
+    Click Element    ${Scancel}
+
+insight module details
+    sleep    5s
+    Click Element    ${insights}
+    sleep    3s
+    Capture Screen
+    sleep    3s
+    Click Element    ${Distribution}
+    sleep    3s
+    Click Element    ${LQ}
+    sleep    3s
+    Click Element    ${QTD}
+    sleep    3s
+    Click Element    ${YTD}
+    sleep    3s
+    Click Element    ${Custom}
+    sleep    3s
+    Click Element    //*[@id="range"]
+    sleep    3s
+    Click Element    ${D1}
+    sleep    3s
+    Click Element    ${D6}
+    sleep    3s
+    Click Element    ${Reason}
+    sleep    3s
+    Click Element    ${RLQ}
+    sleep    3s
+    Click Element    ${RQTD}
+    sleep    3s
+    Click Element    ${R1M}
+    sleep    3s
+    Click Element    ${R1W}
+    sleep    3s
+    Click Element    ${Rtoday}
+    sleep    3s
+    Click Element    ${Rcustom}
+    sleep    3s
+    Click Element    //*[@id="range"]
+    sleep    3s
+    Click Element    ${RN}
+    sleep    3s
+    Click Element    ${ROT}
+    sleep    3s
+    Click Element    ${Severity}
+    sleep    3s
+    Click Element    ${SYTD}
+    sleep    3s
+    Click Element    ${SQTD}
+    sleep    3s
+    Click Element    ${SLQ}
+    sleep    3s
+    Click Element    ${S1M}
+    sleep    3s
+    Click Element    ${S1W}
+    sleep    3s
+    Click Element    ${Stoday}
+    sleep    3s
+    Click Element    ${Location}
+    sleep    3s
+    Click Element    ${LLQ}
+    sleep    3s
+    Click Element    ${DCamera}
+    sleep    3s
+    Click Element    ${CLQ}
+    sleep    3s
+    Click Element    ${Category}
+    sleep    3s
+    Click Element    ${CategoryLQ}
